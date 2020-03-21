@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .projects {
+            margin-top: 100px;
+            margin-bottom: 100px;
+            text-align: center;
+            box-shadow: gray;
+        }
+
+        .project {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1 style="text-align: center">This is the home Page!</h1>
+</div>
+
+<div class="projects">
+    {% for project in projects %}
+    <h2 style="text-align: center">{{ project.title }}</h2>
+    <p style="text-align: center">{{ project.description }}</p>
+    <img width="700" height="400" src="{{ project.image.url }}">
+    {% if project.url %}
+    <br>
+    <a href="{{ project.url }}">Link</a>
+    {% endif %}
+    {% endfor %}
+</div>
+</body>
+</html>
