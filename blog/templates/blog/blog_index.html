@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            background-color: #c0c0c0;
+        }
+
+        .projects {
+            box-sizing: border-box;
+            padding: 18px;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            text-align: center;
+            box-shadow: gray;
+        }
+
+        .project {
+            text-align: center;
+            padding-right: 200px;
+            padding-left: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="projects">
+    {% for blog in blogs %}
+    <div class="project">
+        <br>
+        <h2 style="text-align: center">{{ blog.title }}</h2>
+        <h5 style="text-align: center">{{ blog.date }}</h5>
+        <p style="text-align: center">{{ blog.description }}</p>
+        <hr>
+    </div>
+    {% endfor %}
+</div>
+</body>
+</html>
